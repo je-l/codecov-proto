@@ -7,4 +7,5 @@ script:
   - mypy --cobertura-xml-report coverage .
 
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
+  - bash <(curl -s https://codecov.io/bash) -f $TRAVIS_BUILD_DIR/pytestcov.xml --flag travis_tests
+  - bash <(curl -s https://codecov.io/bash) -f $TRAVIS_BUILD_DIR/mypycov/cobertura.xml --flag travis_mypy

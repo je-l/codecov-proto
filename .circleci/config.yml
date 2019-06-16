@@ -14,6 +14,8 @@ jobs:
       - run: mypy --cobertura-xml-report mypycov .
       - run: pytest --cov=mypy_coverage_demo --cov-report xml:pytestcov.xml test
       - codecov/upload:
-        file: ./mypycov/cobertura.xml
+          file: ./pytestcov.xml
+          flags: circleci_tests
       - codecov/upload:
-        file: ./pytestcov.xml
+          file: ./mypycov/cobertura.xml
+          flags: circleci_mypy
