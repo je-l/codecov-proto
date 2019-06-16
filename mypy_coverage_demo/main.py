@@ -10,3 +10,11 @@ def typed(arg: int) -> float:
     var2 = var * 10
 
     return var2 / 2
+
+
+def another_typed(arg: str) -> str:
+    upper = arg.upper()
+
+    if len(upper) >= 1:
+        return upper[0]
+    return upper

@@ -1,0 +1,10 @@
+language: python
+python:
+  - "3.7"
+
+script:
+  - pytest --cov=mypy_coverage_demo --cov-report xml:pytestcov.xml test
+  - mypy --cobertura-xml-report coverage .
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)

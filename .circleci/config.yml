@@ -11,6 +11,9 @@ jobs:
     steps:
       - checkout
       - run: pip install -r requirements.txt
-      - run: mypy --cobertura-xml-report coverage .
+      - run: mypy --cobertura-xml-report mypycov .
+      - run: pytest --cov=mypy_coverage_demo --cov-report xml:pytestcov.xml test
       - codecov/upload:
-        file: ./coverage/cobertura.xml
+        file: ./mypycov/cobertura.xml
+      - codecov/upload:
+        file: ./pytestcov.xml

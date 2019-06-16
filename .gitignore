@@ -1,1 +1,5 @@
 .mypy_cache
+/dir
+/.coverage
+/pytestcov.xml
+*.pyc

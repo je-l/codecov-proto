@@ -1,2 +1,4 @@
 mypy
 lxml
+pytest
+pytest-cov
